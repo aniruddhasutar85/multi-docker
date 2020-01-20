@@ -12,7 +12,7 @@ after_success:
     - docker build -t aniruddha85/multi-server ./server
     - docker build -t aniruddha85/multi-worker ./worker
 
-# Take image to push them to docker hub1
+# Take image to push them to docker hub11
 # Login to Docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     - docker push aniruddha85/multi-client
