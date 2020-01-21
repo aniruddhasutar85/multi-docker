@@ -2,19 +2,19 @@ sudo: required
 services: 
     - docker
 before_install: 
-    - docker build -t aniruddha85/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t aniruddhasutar85/react-test -f ./client/Dockerfile.dev ./client
 
 script: 
-    - docker run aniruddha85/react-test npm test -- --coverage
+    - docker run aniruddhasutar85/react-test npm test -- --coverage
 after_success:
-    - docker build -t aniruddha85/multi-client ./client
-    - docker build -t aniruddha85/multi-nginx ./nginx
-    - docker build -t aniruddha85/multi-server ./server
-    - docker build -t aniruddha85/multi-worker ./worker
+    - docker build -t aniruddhasutar85/multi-client ./client
+    - docker build -t aniruddhasutar85/multi-nginx ./nginx
+    - docker build -t aniruddhasutar85/multi-server ./server
+    - docker build -t aniruddhasutar85/multi-worker ./worker
     # Take image to push them to docker hub11
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Login to Docker CLI
-    - docker push aniruddha85/multi-client
-    - docker push aniruddha85/multi-nginx
-    - docker push aniruddha85/multi-server
-    - docker push aniruddha85/multi-worker
+    - docker push aniruddhasutar85/multi-client
+    - docker push aniruddhasutar85/multi-nginx
+    - docker push aniruddhasutar85/multi-server
+    - docker push aniruddhasutar85/multi-worker
