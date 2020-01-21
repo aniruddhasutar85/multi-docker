@@ -11,10 +11,9 @@ after_success:
     - docker build -t aniruddha85/multi-nginx ./nginx
     - docker build -t aniruddha85/multi-server ./server
     - docker build -t aniruddha85/multi-worker ./worker
-
-# Take image to push them to docker hub11
-# Login to Docker CLI
+    # Take image to push them to docker hub11
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # Login to Docker CLI
     - docker push aniruddha85/multi-client
     - docker push aniruddha85/multi-nginx
     - docker push aniruddha85/multi-server
